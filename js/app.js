@@ -5,7 +5,7 @@ const btnPeliculas = document.querySelector("#peliculas");
 const containerPeliculas = document.querySelector(".container");
 
 function cargarPeliculas(){
-    fetch("http://192.168.100.166/apisakila/peliculas/all")
+    fetch("http://localhost/apisakila/peliculas/all")
     .then(response => response.json())
     .then(data => {
         let output = "<h2>Peliculas</h2>";
@@ -57,13 +57,15 @@ function saveActor(){
     formData.append("name", name);
     formData.append("lastname", lastname);
 
-    fetch("http://192.168.100.166/apisakila/actores/new", {
+    fetch("http://localhost/apisakila/new_actor", {
         method: "POST",
         body: formData
     })
     .then(response => response.json())
     .then(data => {
         console.log(data);
+        formNewActor.style.display = "none"; // Ocultar formulario tras guardado
+        containerPeliculas.style.display = "flex";
  })
 };
 
