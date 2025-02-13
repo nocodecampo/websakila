@@ -108,6 +108,10 @@ section.main-section{
     color: #666666;
 }
 
+.actores-list{
+    text-transform: uppercase;
+}
+
 footer{
     background-color: cornflowerblue;
     text-align: center;

@@ -42,12 +42,15 @@ const formNewActor = document.querySelector("#form_new_actor");
 const btnSaveActor = document.querySelector("#save_actor");
 const inputName = document.querySelector("#name");
 const inputLastName = document.querySelector("#last_name");
+const btnListarActores = document.querySelector("#list_actors");
 
+// Función para mostrar formulario para añadir actores
 function showForm(){
     formNewActor.style.display = "block";
     containerPeliculas.style.display = "none";
-}
+};
 
+// Función para guardar nuevos actores
 function saveActor(){
 
     let name = inputName.value;
@@ -69,6 +72,25 @@ function saveActor(){
  })
 };
 
+// Función para mostrar todos los actores
+function cargarActores(){
+    fetch("http://localhost/apisakila/actores")
+    .then(response => response.json())
+    .then(data => {
+        let output = "<h2>Actores</h2>";
+        data.forEach(function(actor){
+            output += `
+                <div class="actores-list">
+                    <h3>${actor.first_name} ${actor.last_name}</h3>
+                </div>
+            `;
+        });
+        containerPeliculas.innerHTML = output;
+        containerPeliculas.style.display = "flex";
+    });
+}
+
+
 // LANZAR FUNCIONES
 
 btnNewActor.addEventListener("click", function(){
@@ -77,6 +99,10 @@ btnNewActor.addEventListener("click", function(){
 
 btnSaveActor.addEventListener("click", function(){
     saveActor();
+})
+
+btnListarActores.addEventListener("click", function(){
+    cargarActores();
 })
 
 
