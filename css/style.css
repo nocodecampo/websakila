@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 16px;
+}
+
+header{
+    padding: 24px;
+    background-color: cornflowerblue;
+    text-align: center;
+}
+
+header h1{
+    color: white;
+    text-transform: uppercase;
+    font-kerning: 1px;
+}
+
+main{
+    display: flex;
+}
+
+aside{
+    width: 100%;
+    max-width: 240px;
+    height: 83vh;
+    padding: 24px;
+    background-color: azure;
+    border-right: dashed 1px cornflowerblue;
+    box-shadow: 4px 0 24px -12px rgba(0, 0, 0, 0.6);
+}
+
+aside ul{
+    list-style: none;
+}
+
+aside ul li{
+    padding: 4px 0;
+}
+
+aside ul li a{
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+    padding: 8px;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 4px;
+}
+
+section.main-section{
+    flex:1;
+    padding: 24px 40px;
+    height: 83vh;
+    overflow-x: auto;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.container h2{
+    font-size: 24px;
+    text-transform: uppercase;
+    padding: 0 0 16px 0;
+    border-bottom: dashed 1px cornflowerblue;
+}
+
+.container div{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    border-bottom: solid 1px #ccc;
+}
+
+/*
+#form_new_actor{
+    display: none;
+}
+    */
+
+.container div h3{
+    font-weight: 400;
+}
+
+.container div p{
+    color: #666666;
+}
+
+footer{
+    background-color: cornflowerblue;
+    text-align: center;
+    color: white;
+    padding: 24px;
+}
