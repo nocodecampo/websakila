@@ -82,11 +82,23 @@ section.main-section{
     border-bottom: solid 1px #ccc;
 }
 
-/*
-#form_new_actor{
-    display: none;
+
+#form_new_actor div{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 400px;
 }
-    */
+
+#form_new_actor div input, #form_new_actor div button {
+    padding: 8px 16px;
+}
+
+#form_new_actor div button{
+    cursor: pointer;
+}
+
 
 .container div h3{
     font-weight: 400;

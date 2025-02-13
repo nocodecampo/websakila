@@ -19,6 +19,7 @@ function cargarPeliculas(){
         });
         containerPeliculas.innerHTML = output;
         containerPeliculas.style.display = "flex";
+        formNewActor.style.display = "none";
     });
 };
 
