@@ -5,7 +5,13 @@ const btnPeliculas = document.querySelector("#peliculas");
 const containerPeliculas = document.querySelector(".container");
 
 function cargarPeliculas(){
-    fetch("http://localhost/apisakila/peliculas/all")
+    fetch("http://localhost/apisakila/peliculas/all", {
+        method: "GET",
+        headers:{
+            "Content-Type": "application/json",
+            "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ0dS1hcGkuY29tIiwiYXVkIjoidHUtYXBpLmNvbSIsImlhdCI6MTczOTQ3MzAzMSwiZXhwIjoxNzM5NDc2NjMxLCJ1c2VyX2lkIjoxfQ.UoU_Rtc6TwP-eLz8aFaR1OMu_fivjsmX451ZENsn8ZQ" //+ localStorage.getItem
+        }
+    })
     .then(response => response.json())
     .then(data => {
         let output = "<h2>Peliculas</h2>";
@@ -74,7 +80,13 @@ function saveActor(){
 
 // Función para mostrar todos los actores
 function cargarActores(){
-    fetch("http://localhost/apisakila/actores")
+    fetch("http://localhost/apisakila/actores", {
+        method: "GET",
+        headers:{
+            "Content-Type": "application/json",
+            "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ0dS1hcGkuY29tIiwiYXVkIjoidHUtYXBpLmNvbSIsImlhdCI6MTczOTQ3MzAzMSwiZXhwIjoxNzM5NDc2NjMxLCJ1c2VyX2lkIjoxfQ.UoU_Rtc6TwP-eLz8aFaR1OMu_fivjsmX451ZENsn8ZQ" //+ localStorage.getItem
+        }
+    })
     .then(response => response.json())
     .then(data => {
         let output = "<h2>Actores</h2>";
