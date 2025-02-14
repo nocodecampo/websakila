@@ -9,7 +9,7 @@ function cargarPeliculas(){
         method: "GET",
         headers:{
             "Content-Type": "application/json",
-            "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ0dS1hcGkuY29tIiwiYXVkIjoidHUtYXBpLmNvbSIsImlhdCI6MTczOTQ3MzAzMSwiZXhwIjoxNzM5NDc2NjMxLCJ1c2VyX2lkIjoxfQ.UoU_Rtc6TwP-eLz8aFaR1OMu_fivjsmX451ZENsn8ZQ" //+ localStorage.getItem
+            "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ0dS1hcGkuY29tIiwiYXVkIjoidHUtYXBpLmNvbSIsImlhdCI6MTczOTU0Mzk1NSwiZXhwIjoxNzM5NTQ3NTU1LCJ1c2VyX2lkIjoxfQ.GGngN2Tk9uAO3DAQYkqB9Wo8i1kHhRPshW8E5d7iXHI" //+ localStorage.getItem
         }
     })
     .then(response => response.json())
@@ -66,7 +66,7 @@ function saveActor(){
     formData.append("name", name);
     formData.append("lastname", lastname);
 
-    fetch("http://localhost/apisakila/new_actor", {
+    fetch("http://localhost/apisakila/actores/new_actor", {
         method: "POST",
         body: formData
     })
@@ -80,11 +80,11 @@ function saveActor(){
 
 // Función para mostrar todos los actores
 function cargarActores(){
-    fetch("http://localhost/apisakila/actores", {
+    fetch("http://localhost/apisakila/actores/actores.php", {   
         method: "GET",
         headers:{
             "Content-Type": "application/json",
-            "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ0dS1hcGkuY29tIiwiYXVkIjoidHUtYXBpLmNvbSIsImlhdCI6MTczOTQ3MzAzMSwiZXhwIjoxNzM5NDc2NjMxLCJ1c2VyX2lkIjoxfQ.UoU_Rtc6TwP-eLz8aFaR1OMu_fivjsmX451ZENsn8ZQ" //+ localStorage.getItem
+            "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ0dS1hcGkuY29tIiwiYXVkIjoidHUtYXBpLmNvbSIsImlhdCI6MTczOTU0Mzk1NSwiZXhwIjoxNzM5NTQ3NTU1LCJ1c2VyX2lkIjoxfQ.GGngN2Tk9uAO3DAQYkqB9Wo8i1kHhRPshW8E5d7iXHI" //+ localStorage.getItem
         }
     })
     .then(response => response.json())
